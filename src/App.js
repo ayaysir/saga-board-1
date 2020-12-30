@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route } from "react-router-dom"
+
+import ItemListContainer from "./containers/ItemListContainer"
+import ItemRegisterContainer from "./containers/ItemRegisterContainer"
+import ItemModifyContainer from "./containers/ItemModifyContainer"
+import ItemReadContainer from "./containers/ItemReadContainer"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Route component={ItemListContainer} path="/" exact />
+      <Route component={ItemRegisterContainer} path="/create" exact />
+      <Route component={ItemModifyContainer} path="/edit/:boardNo" exact />
+      <Route component={ItemReadContainer} path="/read/:boardNo" exact />
+    </>
   );
 }
 

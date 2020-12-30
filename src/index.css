@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.item-list {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.item-list tr, .item-list th, .item-list td {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+a, a:visited {
+  color: teal;
+  text-decoration: none;
+}
+
