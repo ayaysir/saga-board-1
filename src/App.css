@@ -1,8 +1,0 @@
-.item-list {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-.item-list tr, .item-list td {
-  border: 1px solid black;
-}
