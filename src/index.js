@@ -22,7 +22,8 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 )
 
-sagaMiddleware(rootSaga) // 리덕스 사가 미들웨어 실행
+// 주의 //
+sagaMiddleware.run(rootSaga) // 리덕스 사가 미들웨어 실행
 
 ReactDOM.render(
   <React.StrictMode>

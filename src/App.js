@@ -11,7 +11,7 @@ function App() {
       <Route component={ItemListContainer} path="/" exact />
       <Route component={ItemRegisterContainer} path="/create" exact />
       <Route component={ItemModifyContainer} path="/edit/:boardNo" exact />
-      <Route component={ItemReadContainer} path="/read/:boardNo" exact />
+      <Route component={ItemReadContainer} path="/read/:itemId" exact />
     </>
   );
 }
