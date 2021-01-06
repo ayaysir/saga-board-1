@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-export default function ItemRead({ itemId, item, isLoading }) {
+export default function ItemRead({ itemId, item, isLoading, onRemove }) {
 
     // 이미지 표시 URL 생성
     const pictureUrl = () => {
@@ -55,7 +55,7 @@ export default function ItemRead({ itemId, item, isLoading }) {
             )}
 
             <Link to={`/edit/${itemId}`}>편집</Link>&nbsp;
-            <button>삭제</button>&nbsp;
+            <button onClick={onRemove}>삭제</button>&nbsp;
             <Link to="/">목록</Link>
         </div >
 
