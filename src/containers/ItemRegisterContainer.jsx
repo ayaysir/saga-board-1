@@ -8,34 +8,34 @@ withRouter 함수는 High-order component이다.
 */
 import { withRouter } from "react-router-dom"
 
-const onRegister = ({itemName, price, description, file}) => {
-    const itemObject = {
-        itemName,
-        price,
-        description
+const ItemRegisterContainer = ({ history }) => {
+
+    const onRegister = ({itemName, price, description, file}) => {
+        const itemObject = {
+            itemName,
+            price,
+            description
+        }
+    
+        // FormData 객체 생성
+        const formData = new FormData()
+        formData.append("file", file)
+        formData.append("item", JSON.stringify(itemObject))
+    
+        // 파일 업로드
+        axios.post("/items", formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        }).then(res => {
+            alert("등록되었습니다.")
+            history.push("/read/" + res.data.itemId)
+        }).catch(err => {
+            alert(err)
+        })
+    
     }
 
-    // FormData 객체 생성
-    const formData = new FormData()
-    formData.append("file", file)
-    formData.append("item", JSON.stringify(itemObject))
-
-    // 파일 업로드
-    axios.post("/items", formData, {
-        headers: {
-            "Content-Type": "multipart/form-data"
-        }
-    }).then(res => {
-        alert("등록되었습니다.")
-        window.history.pushState("/read/" + res.data.itemId)
-    }).catch(err => {
-        alert(err)
-    })
-
-}
-
-
-const ItemRegisterContainer = ({ history }) => {
     return <ItemRegisterForm onRegister={onRegister} />
 }
 
