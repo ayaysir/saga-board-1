@@ -12,39 +12,39 @@ export default function ItemRead({ itemId, item, isLoading, onRemove }) {
 
     return (
         <div align="center">
-            <h2>상품 상세보기</h2>
+            <h2 className="title">상품 상세보기</h2>
             {isLoading && "로딩중...."}
             {!isLoading && item && (
                 <>
                     <table>
                         <tbody>
                             <tr>
-                                <td>상품번호</td>
+                                <td className="form-label">상품번호</td>
                                 <td>
                                     <input type="text" value={item.itemId} readOnly />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품명</td>
+                                <td className="form-label">상품명</td>
                                 <td>
                                     <input type="text" value={item.itemName} readOnly />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품가격</td>
+                                <td className="form-label">상품가격</td>
                                 <td>
                                     <input type="text" value={item.price} readOnly />
-                                    <span>&nbsp;원</span>
+                                    <span class="in-won">₩</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td>미리보기</td>
+                                <td className="form-label">미리보기</td>
                                 <td>
-                                    <img src={pictureUrl()} alt="상품 이미지" width="200" />
+                                    <img src={pictureUrl()} alt="상품 이미지" width="200" className="img-preview" />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품설명</td>
+                                <td className="form-label">상품설명</td>
                                 <td>
                                     <textarea value={item.description} readOnly></textarea>
                                 </td>
@@ -54,9 +54,9 @@ export default function ItemRead({ itemId, item, isLoading, onRemove }) {
                 </>
             )}
 
-            <Link to={`/edit/${itemId}`}>편집</Link>&nbsp;
-            <button onClick={onRemove}>삭제</button>&nbsp;
-            <Link to="/">목록</Link>
+            <Link to={`/edit/${itemId}`} className="like-a-button">편집</Link>&nbsp;
+            <button onClick={onRemove} className="like-a-button danger">삭제</button>&nbsp;
+            <Link to="/" className="like-a-button">목록</Link>
         </div >
 
     )

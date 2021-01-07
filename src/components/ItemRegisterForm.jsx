@@ -37,12 +37,12 @@ export default function ItemRegisterForm({ onRegister }) {
 
     return (
         <div align="center">
-            <h2>상품 등록</h2>
+            <h2 class="title">상품 등록</h2>
             <form onSubmit={handleSubmit}>
                 <table>
                     <tbody>
                         <tr>
-                            <th>상품명</th>
+                            <th className="form-label">상품명</th>
                             <td>
                                 <input 
                                     type="text"
@@ -52,23 +52,24 @@ export default function ItemRegisterForm({ onRegister }) {
                             </td>
                         </tr>
                         <tr>
-                            <th>상품가격</th>
+                            <th className="form-label">상품가격</th>
                             <td>
                                 <input 
                                     type="text"
                                     value={price}
                                     onChange={handleChangePrice} 
                                 />
+                                <span class="in-won">₩</span>
                             </td>
                         </tr>
                         <tr>
-                            <th>상품파일</th>
+                            <th className="form-label">상품파일</th>
                             <td>
                                 <input type="file" onChange={handleChangeFile} />
                             </td>
                         </tr>
                         <tr>
-                            <th>상품설명</th>
+                            <th className="form-label">상품설명</th>
                             <td>
                                 <textarea 
                                     rows="5"
@@ -81,8 +82,8 @@ export default function ItemRegisterForm({ onRegister }) {
                 </table>
 
                 <div>
-                    <button type="submit">등록</button>&nbsp;
-                    <Link to="/">취소</Link>                     
+                    <button type="submit" className="like-a-button success">등록</button>&nbsp;
+                    <Link to="/" className="like-a-button">취소</Link>                     
                 </div>
             </form>
         </div>

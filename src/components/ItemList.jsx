@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 export default function ItemList({ items, isLoading }) {
     return (
         <div align="center">
-            <h2>상품 목록</h2>
+            <h2 className="title">상품 목록</h2>
             {isLoading && "로딩중..."}
             {!isLoading && items && (
                 <>
-                    <Link to="/create">새로 만들기</Link>
+                    <Link to="/create" className="btn-link">새로 만들기</Link>
                     <table className="item-list">
                         <thead>
                             <tr>
@@ -26,9 +26,9 @@ export default function ItemList({ items, isLoading }) {
                                 <tr key={item.itemId}>
                                     <td align="center">{item.itemId}</td>
                                     <td align="left">
-                                        <Link to={`/read/${item.itemId}`}>{item.itemName}</Link>
+                                        <Link to={`/read/${item.itemId}`} className="board-title">{item.itemName}</Link>
                                     </td>
-                                    <td align="right">{item.price} 원</td>
+                                    <td align="right">{item.price.toLocaleString( 'ko-KR', { style: 'currency', currency: 'KRW' } )}</td>
                                 </tr>
                             ))}
 

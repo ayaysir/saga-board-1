@@ -56,38 +56,38 @@ export default function ItemModifyForm({ item, isLoading, onModify }) {
                     <table>
                         <tbody>
                             <tr>
-                                <td>상품번호</td>
+                                <td className="form-label">상품번호</td>
                                 <td>
                                     <input type="text" value={item.itemId} disabled />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품명</td>
+                                <td className="form-label">상품명</td>
                                 <td>
                                     <input type="text" value={itemName} onChange={handleChangeItemName} />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품가격</td>
+                                <td className="form-label">상품가격</td>
                                 <td>
                                     <input type="text" value={price} onChange={handleChangePrice} />
                                     <span>&nbsp;원</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품파일</td>
+                                <td className="form-label">상품파일</td>
                                 <td>
                                     <input type="file" onChange={handleChangeFile} />
                                 </td>
                             </tr>
                             <tr>
-                                <td>미리보기</td>
+                                <td className="form-label">미리보기</td>
                                 <td>
-                                    <img src={pictureUrl(item.itemId)} alt="" width="200" />
+                                    <img src={pictureUrl(item.itemId)} alt="" width="200" className="img-preview" />
                                 </td>
                             </tr>
                             <tr>
-                                <td>상품설명</td>
+                                <td className="form-label">상품설명</td>
                                 <td>
                                     <textarea rows="5" value={description} onChange={handleChangeDescription}></textarea>
                                 </td>
@@ -96,8 +96,8 @@ export default function ItemModifyForm({ item, isLoading, onModify }) {
                     </table>
 
                     <div>
-                        <button type="submit">수정</button>&nbsp;
-                    <Link to={`/read/${item.itemId}`}>취소</Link>
+                        <button type="submit" className="like-a-button">수정</button>&nbsp;
+                    <Link to={`/read/${item.itemId}`} className="like-a-button">취소</Link>
                     </div>
                 </form>
             )}
