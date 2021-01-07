@@ -1,3 +1,11 @@
+# 스크린샷
+![첫 화면](./screenshots/1.jpg)
+![상세보기](./screenshots/2.jpg)
+![게시글 추가](./screenshots/3.jpg)
+![게시글 수정](./screenshots/4.jpg)
+![게시글 삭제](./screenshots/5.jpg)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
